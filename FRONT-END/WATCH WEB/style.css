@@ -1,0 +1,422 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  color: white;
+  font-family: sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 15px;
+  margin-bottom: 15px;
+}
+
+li {
+  display: inline;
+  list-style: none;
+}
+
+li a {
+  text-decoration: none;
+  color: white;
+  margin-left: 40px;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+li a:hover {
+  color: #00c8ff;
+}
+
+li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background: #00c8ff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.3s ease-out;
+}
+
+li a:hover::after {
+  transform: scaleX(1);
+}
+
+header {
+  height: 170vh;
+  background: url(WATCH_HEADER_IMAGE.png);
+  background-size: cover;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+}
+
+.main-headings {
+  position: absolute;
+  top: 2rem;
+  color: white;
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  word-spacing: 10px;
+}
+
+.L {
+  color: #00c8ff;
+  display: inline;
+}
+
+.secondary-heading {
+  position: absolute;
+  top: 6rem;
+  color: white;
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  word-spacing: 10px;
+  letter-spacing: 1px;
+}
+
+.main-button {
+  position: absolute;
+  top: 10rem;
+  left: 39rem;
+  padding: 10px 30px;
+  background: #006d77;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  height: 50px;
+  transition: all 0.3s ease-in-out;
+  font-family: "Montserrat", sans-serif;
+}
+
+.main-button:hover {
+  background-color: #008891;
+  box-shadow: 0 12px 28px rgba(0, 109, 119, 0.6);
+  transform: scale(1.1);
+}
+
+main {
+  background-color: black;
+  padding: 2rem;
+  text-align: center;
+}
+
+main h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  color: #00c8ff;
+}
+
+main h3 {
+  color: #ccc;
+  margin: 1rem 0 2rem;
+  font-weight: normal;
+  font-size: 1rem;
+  position: relative;
+  margin-top: 30px;
+  width: 90vh;
+  align-self: center;
+  left: 355px;
+  margin-bottom: 25vh;
+}
+
+/* Collections container */
+.collections {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Card styling */
+.card {
+  width: 280px;
+  background-color: #111;
+  color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 200, 255, 0.2);
+  transition: all 0.3s ease;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+.card:hover {
+  box-shadow: 0 8px 24px rgba(0, 200, 255, 0.5), 0 0 12px rgba(0, 200, 255, 0.4);
+  transform: translateY(-6px) scale(1.03);
+}
+
+/* Card image */
+.card img.png {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* Card content */
+.card-content {
+  padding: 16px;
+}
+
+.card-content h1 {
+  font-size: larger;
+  color: #00c8ff;
+  font-family: "Playfair Display", serif;
+  margin-bottom: 6px;
+  letter-spacing: 1px;
+}
+
+.card-content p {
+  font-size: 14px;
+  color: #ccc;
+  margin: 6px 0;
+}
+
+.card-content .price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #00c8ff;
+}
+
+.card-content button {
+  margin-top: 12px;
+  padding: 10px 20px;
+  background-color: #00c8ff;
+  color: black;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card-content button:hover {
+  background-color: #00a3cc;
+}
+
+/* ===========================
+   Responsive Styles
+=========================== */
+
+/* Medium screens - Tablets (portrait) */
+@media (max-width: 1024px) {
+  header {
+    height: 120vh;
+    background-position: center;
+  }
+
+  .main-headings {
+    font-size: 2.2rem;
+    top: 3rem;
+    text-align: center;
+  }
+
+  .secondary-heading {
+    top: 7rem;
+    font-size: 1.6rem;
+  }
+
+  .main-button {
+    top: 12rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  main h3 {
+    width: 90%;
+    left: auto;
+    margin: 2rem auto 5rem;
+  }
+
+  .collections {
+    gap: 1.5rem;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 350px;
+  }
+}
+
+/* Small screens - Mobile phones */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav ul {
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  nav li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  header {
+    height: 100vh;
+    padding-top: 2rem;
+  }
+
+  .main-headings {
+    font-size: 1.8rem;
+    word-spacing: 4px;
+    top: 2rem;
+  }
+
+  .secondary-heading {
+    font-size: 1.2rem;
+    top: 6rem;
+  }
+
+  .main-button {
+    top: 10rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  main h3 {
+    width: 95%;
+    font-size: 0.95rem;
+    left: auto;
+    margin: 1rem auto 2rem;
+  }
+
+  .collections {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 320px;
+  }
+}
+
+/* Extra Small Screens - Very small mobiles */
+@media (max-width: 480px) {
+  .main-headings {
+    font-size: 1.5rem;
+  }
+
+  .secondary-heading {
+    font-size: 1rem;
+  }
+
+  .main-button {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
+
+  .card-content h1 {
+    font-size: 1rem;
+  }
+
+  .card-content p,
+  .card-content .price {
+    font-size: 0.9rem;
+  }
+}
+
+.contact-section {
+  margin-top: 5rem;
+  padding: 2rem;
+  background-color: #111;
+  border-top: 2px solid #00c8ff;
+  text-align: center;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
+
+.contact-title {
+  font-family: "Playfair Display", serif;
+  color: #00c8ff;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contact-subtitle {
+  color: #ccc;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.contact-form {
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.contact-form button {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #00c8ff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #00a3cc;
+}
+
+.contact-details {
+  flex: 1;
+  min-width: 250px;
+  max-width: 400px;
+  text-align: left;
+  margin: auto 0;
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+.contact-details p {
+  margin-bottom: 10px;
+}
+
